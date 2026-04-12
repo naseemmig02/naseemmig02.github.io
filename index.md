@@ -1,6 +1,8 @@
 ---
-title: "Naseem Migdadi — AI/ML Engineer"
+layout: default
 ---
+
+# Naseem Migdadi
 
 ## About
 
