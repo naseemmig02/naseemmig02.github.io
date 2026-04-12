@@ -1,3 +1,6 @@
 title: "Naseem Migdadi"
 description: "Applied AI & ML Systems — Portfolio"
 theme: minima
+
+titles_from_headings:
+  enabled: false
