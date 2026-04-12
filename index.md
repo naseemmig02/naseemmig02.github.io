@@ -1,12 +1,8 @@
----
-layout: default
----
-
-# Your Name
+# Naseem Migdadi
 
 ## About
 
-I am a recent graduate in [Computer Science / Electrical Engineering] from [University Name] in Jordan. I am building expertise in applied AI and ML systems through the AI.SPIRE program. I am most interested in [your areas of interest — e.g., NLP, computer vision, data engineering, deployment].
+I am a graduate in Artificial Intelligence and Robotics from Al-Balqa Applied University in Jordan. I am currently deepening my applied AI and ML engineering skills through the AI.SPIRE program. I am most interested in deep learning, large language models, NLP systems, and building agentic AI applications.
 
 ---
 
@@ -16,103 +12,56 @@ I am a recent graduate in [Computer Science / Electrical Engineering] from [Univ
 
 **Git, Environment Setup & Collaboration**
 
-- **Environment & Git Workflows** — Set up a reproducible Python development environment and practiced branching, merging, and pull request workflows.
-  - Repo: [your-repo-link](#)
+- **Git Workflows & Environment Setup** — Set up a reproducible Python development environment and practiced branching, merging, and pull request workflows in a team setting.
+  - Repo: [M1 Lab Repo](https://github.com/LevelUp-Applied-AI/m1-l1-git-workflows-naseemmig02)
   - Skills: Git, GitHub, VS Code, virtual environments, branch management
-
-- **Team Collaboration Pipeline** — Collaborated on a shared repository using feature branches and code review, resolving merge conflicts and maintaining a clean commit history.
-  - Repo: [your-repo-link](#)
-  - Skills: Git collaboration, pull requests, code review, merge conflict resolution
 
 **Data Pipelines & PyTorch Fundamentals**
 
-- **Data Pipeline** — Built an end-to-end data loading and preprocessing pipeline using pandas, with validation checks and reproducible outputs.
-  - Repo: [your-repo-link](#)
-  - Skills: Python, pandas, data cleaning, pipeline design
-
-- **PyTorch Model** — Implemented a neural network training loop in PyTorch, including data loading, forward/backward passes, and evaluation metrics.
-  - Repo: [your-repo-link](#)
-  - Skills: PyTorch, tensor operations, training loops, model evaluation
+- **PyTorch Fundamentals** — Built and trained neural network models using PyTorch, covering data loading, tensor operations, forward/backward passes, and evaluation metrics.
+  - Repo: [M2 Integration Repo](https://github.com/LevelUp-Applied-AI/m2-i2-pytorch-naseemmig02)
+  - Skills: PyTorch, tensor operations, neural networks, model evaluation
 
 **Relational Databases & SQL**
 
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: SQL, PostgreSQL, data modeling
-
-**Data Visualization & Communication**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: Matplotlib, data storytelling
+- **SQL Analytics** — Wrote and optimized SQL queries to analyze relational datasets, applying joins, aggregations, and window functions for data insights.
+  - Repo: [M3 Lab Repo](https://github.com/LevelUp-Applied-AI/m3-l3-sql-analytics-naseemmig02)
+  - Skills: SQL, PostgreSQL, data analysis, query optimization
 
 ---
 
-### Machine Learning & NLP
+### ML & NLP
 
-**Machine Learning Fundamentals**
+**Data Visualization & KPI Dashboards**
 
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: scikit-learn, model evaluation
+- **KPI Dashboard** — Built an interactive data visualization dashboard to track and present key performance indicators using Python.
+  - Repo: [M4 Integration Repo](https://github.com/LevelUp-Applied-AI/m4-i4-kpi-dashboard-naseemmig02)
+  - Skills: Python, data visualization, dashboards, pandas
 
-**Natural Language Processing**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: spaCy, text preprocessing, NLP pipelines
-
-**Deep Learning for NLP**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: PyTorch, Hugging Face, transformers
+*More projects coming soon — modules in progress.*
 
 ---
 
 ### Retrieval & Knowledge Graphs
 
-**Retrieval-Augmented Generation**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: Weaviate, RAG pipelines, embeddings
-  - [Read more](projects/sample-project.md) *(optional -- use for projects complex enough to warrant a detail page)*
-
-**Knowledge Graphs**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: Triple stores, SPARQL, knowledge representation
+*Coming soon.*
 
 ---
 
 ### Deployment
 
-**API Development & Containerization**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: FastAPI, Docker, deployment
-
-**Monitoring & Production Systems**
-
-- **Project Name** — One sentence describing what you built.
-  - Repo: [link](#)
-  - Skills: Monitoring, logging, production reliability
+*Coming soon.*
 
 ---
 
 ### Capstone
 
-- **Project Name** — One sentence describing your capstone.
-  - Repo: [link](#)
-  - Skills: Full-stack AI/ML system
+*Coming soon.*
 
 ---
 
 ## Contact
 
-- **GitHub:** [your-github-username](https://github.com/your-github-username)
-- **LinkedIn:** [your-linkedin-profile](https://linkedin.com/in/your-profile)
-- **Email:** your.email@example.com
+- GitHub: [github.com/naseemmig02](https://github.com/naseemmig02)
+- LinkedIn: [linkedin.com/in/naseem-migdadi](https://linkedin.com/in/naseem-migdadi)
+- Email: naseemmig84@gmail.com
