@@ -1,3 +1,7 @@
+---
+title: "Naseem Migdadi — AI/ML Engineer"
+---
+
 ## About
 
 I am a graduate in Artificial Intelligence and Robotics from Al-Balqa Applied University in Jordan. I am currently deepening my applied AI and ML engineering skills through the AI.SPIRE program. I am most interested in deep learning, large language models, NLP systems, and building agentic AI applications.
