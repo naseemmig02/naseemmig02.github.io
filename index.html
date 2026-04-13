@@ -4,583 +4,259 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Naseem Migdadi — AI/ML Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --navy:    #020c1b;
-      --navy2:   #0a1628;
-      --navy3:   #112240;
-      --card:    #0d1f3c;
-      --accent:  #64ffda;
-      --accent2: #4fc3f7;
-      --muted:   #8892b0;
-      --light:   #ccd6f6;
-      --white:   #e6f1ff;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--navy);
-      color: var(--light);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ── NOISE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      justify-content: flex-end;
-      gap: 2rem;
-      padding: 1.2rem 4rem;
-      background: rgba(2, 12, 27, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(100,255,218,0.07);
-      z-index: 100;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--accent); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 6rem 2rem 4rem;
-      position: relative;
-    }
-
-    /* glowing orb behind hero */
-    #hero::after {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(100,255,218,0.07) 0%, transparent 70%);
-      border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    .hero-tag {
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.4s forwards;
-    }
-
-    .hero-name span {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-title {
-      margin-top: 1rem;
-      font-size: 1.15rem;
-      color: var(--muted);
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
-    }
-
-    .hero-cta {
-      margin-top: 2.5rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.8s forwards;
-    }
-
-    .btn {
-      padding: 0.75rem 1.8rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.25s;
-      letter-spacing: 0.03em;
-    }
-
-    .btn-primary {
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      background: transparent;
-    }
-    .btn-primary:hover {
-      background: rgba(100,255,218,0.08);
-      box-shadow: 0 0 20px rgba(100,255,218,0.15);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--navy3);
-      color: var(--muted);
-      background: var(--navy3);
-    }
-    .btn-secondary:hover {
-      border-color: var(--accent2);
-      color: var(--accent2);
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 2.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(100,255,218,0.1);
-    }
-
-    /* ── ABOUT ── */
-    .about-text {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 640px;
-      line-height: 1.8;
-    }
-
-    .about-text strong { color: var(--light); font-weight: 500; }
-
-    /* ── SKILLS CHIPS ── */
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 2rem;
-    }
-
-    .chip {
-      padding: 0.35rem 0.9rem;
-      border-radius: 20px;
-      background: var(--navy3);
-      border: 1px solid rgba(100,255,218,0.12);
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.03em;
-    }
-
-    /* ── PHASE BLOCKS ── */
-    .phase {
-      margin-bottom: 3rem;
-    }
-
-    .phase-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--accent2);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .phase-title::before {
-      content: '';
-      display: inline-block;
-      width: 28px; height: 1px;
-      background: var(--accent2);
-    }
-
-    /* ── PROJECT CARDS ── */
-    .project-card {
-      background: var(--card);
-      border: 1px solid rgba(100,255,218,0.08);
-      border-radius: 8px;
-      padding: 1.4rem 1.6rem;
-      margin-bottom: 1rem;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(100,255,218,0.25);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-    }
-
-    .project-card.placeholder {
-      opacity: 0.45;
-      border-style: dashed;
-    }
-
-    .project-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .project-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .project-link {
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: opacity 0.2s;
-    }
-    .project-link:hover { opacity: 0.75; }
-
-    .project-link svg {
-      width: 12px; height: 12px;
-      stroke: currentColor;
-      fill: none;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tag {
-      font-size: 0.73rem;
-      color: var(--muted);
-      background: var(--navy3);
-      border-radius: 3px;
-      padding: 0.15rem 0.55rem;
-    }
-
-    /* ── CONTACT ── */
-    .contact-links {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid rgba(136,146,176,0.2);
-      border-radius: 6px;
-      transition: all 0.2s;
-    }
-    .contact-link:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: rgba(100,255,218,0.05);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-      font-size: 0.8rem;
-      border-top: 1px solid rgba(100,255,218,0.07);
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid rgba(100,255,218,0.07);
-      margin: 0;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      nav { padding: 1rem 1.5rem; gap: 1.2rem; }
-      section { padding: 3.5rem 1.2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">NM<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
   </nav>
 
   <!-- HERO -->
-  <div id="hero">
-    <p class="hero-tag">AI / ML Engineer</p>
-    <h1 class="hero-name">Naseem<br/><span>Migdadi</span></h1>
-    <p class="hero-title">Building intelligent systems · Deep Learning · LLMs · Agentic AI</p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="https://github.com/naseemmig02" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag mono">
+        <span class="blink">▋</span> AI / ML Engineer
+      </div>
+      <h1 class="hero-name">
+        <span class="line-reveal" style="animation-delay:0.1s">Naseem</span>
+        <span class="line-reveal accent-text" style="animation-delay:0.25s">Migdadi</span>
+      </h1>
+      <p class="hero-sub line-reveal" style="animation-delay:0.4s">
+        Building intelligent systems with deep learning,<br>
+        large language models & end-to-end AI pipelines.
+      </p>
+      <div class="hero-actions line-reveal" style="animation-delay:0.55s">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
     </div>
-  </div>
+    <div class="hero-visual line-reveal" style="animation-delay:0.3s">
+      <div class="code-card">
+        <div class="code-card-header">
+          <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+          <span class="mono" style="font-size:11px;opacity:0.5;margin-left:8px">naseem.py</span>
+        </div>
+        <pre class="code-body mono"><span class="c-kw">class</span> <span class="c-cl">NaseemMigdadi</span>:
+  <span class="c-kw">def</span> <span class="c-fn">__init__</span>(<span class="c-var">self</span>):
+    <span class="c-var">self</span>.role = <span class="c-str">"AI/ML Engineer"</span>
+    <span class="c-var">self</span>.location = <span class="c-str">"Irbid, Jordan"</span>
+    <span class="c-var">self</span>.skills = [
+      <span class="c-str">"Deep Learning"</span>,
+      <span class="c-str">"LLMs & Prompt Eng."</span>,
+      <span class="c-str">"Computer Vision"</span>,
+      <span class="c-str">"Data Pipelines"</span>,
+    ]
 
-  <hr class="divider"/>
+  <span class="c-kw">def</span> <span class="c-fn">deliver</span>(<span class="c-var">self</span>, problem):
+    <span class="c-kw">return</span> AI_solution(problem)</pre>
+      </div>
+    </div>
+  </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="reveal">
-      <p class="section-label">Introduction</p>
-      <h2 class="section-title">About Me</h2>
-      <p class="about-text">
-        I am a graduate in <strong>Artificial Intelligence and Robotics</strong> from Al-Balqa Applied University in Jordan.
-        I am currently deepening my applied AI and ML engineering skills through the <strong>AI.SPIRE program</strong>.
-        I am most interested in deep learning, large language models, NLP systems, and building agentic AI applications.
-      </p>
-      <div class="chips">
-        <span class="chip">Python</span>
-        <span class="chip">PyTorch</span>
-        <span class="chip">TensorFlow</span>
-        <span class="chip">Deep Learning</span>
-        <span class="chip">NLP</span>
-        <span class="chip">LLMs</span>
-        <span class="chip">Computer Vision</span>
-        <span class="chip">Prompt Engineering</span>
-        <span class="chip">SQL</span>
-        <span class="chip">Data Analysis</span>
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label mono">01 — About</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title">Motivated to build<br><span class="accent-text">AI that matters</span></h2>
+          <p>I'm a highly motivated AI engineer with strong expertise in machine learning, deep learning, and agentic AI systems. I have a proven ability to analyze large datasets, build predictive models, and develop AI-powered applications using Python, TensorFlow, and LLMs.</p>
+          <p>I'm skilled in prompt engineering and self-directed learning, always seeking to deliver innovative solutions under tight deadlines. My goal is to leverage technical skills in a dynamic AI role and contribute to real-world impact.</p>
+          <div class="skills-grid">
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">TensorFlow</div>
+            <div class="skill-tag">PyTorch</div>
+            <div class="skill-tag">Machine Learning</div>
+            <div class="skill-tag">Deep Learning</div>
+            <div class="skill-tag">LLMs</div>
+            <div class="skill-tag">Computer Vision</div>
+            <div class="skill-tag">NLP</div>
+            <div class="skill-tag">Data Analysis</div>
+            <div class="skill-tag">Prompt Engineering</div>
+            <div class="skill-tag">SQL</div>
+            <div class="skill-tag">Data Pipelines</div>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num accent-text">2+</div>
+            <div class="stat-label">Years of hands-on AI/ML experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num accent-text">20+</div>
+            <div class="stat-label">GitHub projects & repositories</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num accent-text">B.Sc.</div>
+            <div class="stat-label">AI & Robotics — Al-Balqa Applied University</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider"/>
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-label mono">02 — Experience</div>
+      <h2 class="section-title">Work <span class="accent-text">Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date mono">Nov 2024 — May 2025</div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">AI & Data Science Trainee</h3>
+                <div class="tl-company">Unihance · Jordan, Amman</div>
+              </div>
+              <div class="tl-badge">Recent</div>
+            </div>
+            <ul class="tl-list">
+              <li>Mastered foundational data science concepts including statistics, data modeling, and Python programming for AI applications.</li>
+              <li>Advanced through multiple levels of ML and deep learning, applying techniques like neural networks and fine-tuning.</li>
+              <li>Explored AI for business, prompt engineering, and LLMs including GPT integration and model fine-tuning for custom solutions.</li>
+              <li>Gained hands-on experience in natural language processing and ethical AI practices for responsible deployment.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date mono">Jun 2023 — Aug 2023</div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">ML & Data Analysis Engineer (Trainee)</h3>
+                <div class="tl-company">Jordan Computer Society · Jordan, Amman</div>
+              </div>
+            </div>
+            <ul class="tl-list">
+              <li>Analyzed large datasets using NumPy, Pandas, and Matplotlib to extract insights and visualize trends.</li>
+              <li>Developed machine learning projects with scikit-learn, including classification and regression models.</li>
+              <li>Built deep learning applications using TensorFlow, focusing on neural networks for improved accuracy.</li>
+              <li>Completed a full data science project from data collection to model deployment demonstrating end-to-end AI workflow integration.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date mono">Feb 2021 — Feb 2024</div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">B.Sc. Artificial Intelligence & Robotics</h3>
+                <div class="tl-company">Al-Balqa Applied University · Jordan</div>
+              </div>
+              <div class="tl-badge tl-badge-edu">Education</div>
+            </div>
+            <p style="font-size:14px;opacity:0.75;margin-top:8px;">
+              Bachelor of Science in Artificial Intelligence and Robotics — built a strong foundation in AI theory, algorithms, and applied robotics systems.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <div class="reveal">
-      <p class="section-label">Work</p>
-      <h2 class="section-title">Projects</h2>
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label mono">03 — Projects</div>
+      <h2 class="section-title">Featured <span class="accent-text">Projects</span></h2>
 
-      <!-- Foundations -->
-      <div class="phase">
-        <p class="phase-title">Foundations</p>
+      <!-- Featured -->
+      <div class="featured-projects">
 
-        <div class="project-card">
-          <p class="project-name">Git Workflows &amp; Environment Setup</p>
-          <p class="project-desc">Set up a reproducible Python development environment and practiced branching, merging, and pull request workflows in a team setting.</p>
-          <div class="project-meta">
-            <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m1-l1-git-workflows-naseemmig02" target="_blank">
-              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              M1 Lab Repo
-            </a>
-            <div class="tags">
-              <span class="tag">Git</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">VS Code</span>
-              <span class="tag">Virtual Environments</span>
-            </div>
+        <a class="featured-card" href="https://github.com/naseemmig02/SQL-Murder-Mystery" target="_blank">
+          <div class="fc-tag mono">SQL · Data Analysis</div>
+          <h3 class="fc-title">SQL Murder Mystery</h3>
+          <p class="fc-desc">A detective-style data challenge using SQL queries to solve a fictional murder mystery — demonstrates analytical thinking with relational databases.</p>
+          <div class="fc-footer">
+            <span class="fc-link mono">github.com/naseemmig02 ↗</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <p class="project-name">PyTorch Fundamentals</p>
-          <p class="project-desc">Built and trained neural network models using PyTorch, covering data loading, tensor operations, forward/backward passes, and evaluation metrics.</p>
-          <div class="project-meta">
-            <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m2-i2-pytorch-naseemmig02" target="_blank">
-              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              M2 Integration Repo
-            </a>
-            <div class="tags">
-              <span class="tag">PyTorch</span>
-              <span class="tag">Neural Networks</span>
-              <span class="tag">Tensors</span>
-              <span class="tag">Model Evaluation</span>
-            </div>
+        <a class="featured-card" href="https://github.com/LevelUp-Applied-AI/m2-i2-pytorch-naseemmig02" target="_blank">
+          <div class="fc-tag mono">Deep Learning · PyTorch</div>
+          <h3 class="fc-title">PyTorch Deep Learning</h3>
+          <p class="fc-desc">Hands-on implementation of deep learning models using PyTorch — covering model architecture, training loops, and evaluation strategies.</p>
+          <div class="fc-footer">
+            <span class="fc-link mono">LevelUp Applied AI ↗</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <p class="project-name">SQL Analytics</p>
-          <p class="project-desc">Wrote and optimized SQL queries to analyze relational datasets, applying joins, aggregations, and window functions for data insights.</p>
-          <div class="project-meta">
-            <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m3-l3-sql-analytics-naseemmig02" target="_blank">
-              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              M3 Lab Repo
-            </a>
-            <div class="tags">
-              <span class="tag">SQL</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Data Analysis</span>
-              <span class="tag">Query Optimization</span>
-            </div>
+        <a class="featured-card featured-card-wide" href="https://github.com/LevelUp-Applied-AI/m4-i4-kpi-dashboard-naseemmig02" target="_blank">
+          <div class="fc-tag mono">Analytics · Dashboard</div>
+          <h3 class="fc-title">KPI Dashboard</h3>
+          <p class="fc-desc">Built an interactive KPI analytics dashboard to visualize key business performance indicators using descriptive analytics techniques and data storytelling.</p>
+          <div class="fc-footer">
+            <span class="fc-link mono">LevelUp Applied AI ↗</span>
           </div>
-        </div>
+        </a>
+
       </div>
 
-      <!-- ML & NLP -->
-      <div class="phase">
-        <p class="phase-title">ML &amp; NLP</p>
-
-        <div class="project-card">
-          <p class="project-name">KPI Dashboard</p>
-          <p class="project-desc">Built an interactive data visualization dashboard to track and present key performance indicators using Python.</p>
-          <div class="project-meta">
-            <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m4-i4-kpi-dashboard-naseemmig02" target="_blank">
-              <svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              M4 Integration Repo
-            </a>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Data Visualization</span>
-              <span class="tag">Dashboards</span>
-              <span class="tag">pandas</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Retrieval -->
-      <div class="phase">
-        <p class="phase-title">Retrieval &amp; Knowledge Graphs</p>
-        <div class="project-card placeholder">
-          <p class="project-name">Coming Soon</p>
-          <p class="project-desc">Modules in progress — RAG systems and knowledge graph projects will be added here.</p>
-        </div>
-      </div>
-
-      <!-- Deployment -->
-      <div class="phase">
-        <p class="phase-title">Deployment</p>
-        <div class="project-card placeholder">
-          <p class="project-name">Coming Soon</p>
-          <p class="project-desc">API deployment and ML serving projects will be added here.</p>
-        </div>
-      </div>
-
-      <!-- Capstone -->
-      <div class="phase">
-        <p class="phase-title">Capstone</p>
-        <div class="project-card placeholder">
-          <p class="project-name">Coming Soon</p>
-          <p class="project-desc">Full-system capstone project will be featured here.</p>
-        </div>
-      </div>
-
+      <!-- Module Groups -->
+      <h3 class="modules-heading">LevelUp Applied AI — Module Projects</h3>
+      <div id="module-groups"></div>
     </div>
   </section>
-
-  <hr class="divider"/>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="reveal">
-      <p class="section-label">Get in Touch</p>
-      <h2 class="section-title">Contact</h2>
-      <p style="color:var(--muted); font-size:0.95rem;">Feel free to reach out for collaboration, opportunities, or just to connect.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="https://github.com/naseemmig02" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          GitHub
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-label mono">04 — Contact</div>
+      <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
+      <p class="contact-intro">I'm open to new opportunities, collaborations, and interesting AI projects. Feel free to reach out!</p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:naseemmig84@gmail.com">
+          <div class="contact-icon">✉</div>
+          <div class="contact-label mono">Email</div>
+          <div class="contact-value">naseemmig84@gmail.com</div>
         </a>
-        <a class="contact-link" href="https://linkedin.com/in/naseem-migdadi" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
+        <a class="contact-card" href="tel:+00962798846270">
+          <div class="contact-icon">☎</div>
+          <div class="contact-label mono">Phone</div>
+          <div class="contact-value">+00962 798 846 270</div>
         </a>
-        <a class="contact-link" href="mailto:naseemmig84@gmail.com">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
+        <a class="contact-card" href="https://github.com/naseemmig02" target="_blank">
+          <div class="contact-icon">&#9661;</div>
+          <div class="contact-label mono">GitHub</div>
+          <div class="contact-value">github.com/naseemmig02</div>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/naseem-migdadi" target="_blank">
+          <div class="contact-icon">in</div>
+          <div class="contact-label mono">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/naseem-migdadi</div>
         </a>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>Designed &amp; built by Naseem Migdadi · 2026</p>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="mono" style="font-size:13px;opacity:0.4">Naseem Migdadi · AI/ML Engineer · Jordan</span>
+      <span class="mono" style="font-size:13px;opacity:0.4">Built with passion &#9829;</span>
+    </div>
   </footer>
 
-  <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
